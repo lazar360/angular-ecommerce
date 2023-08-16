@@ -12,6 +12,10 @@
     box-sizing:border-box
 }
 
+a:hover, a:active, a:visited, a:link{
+    text-decoration: none;
+}
+
 body{
     font-family:Poppins,sans-serif;
     font-weight:400;
