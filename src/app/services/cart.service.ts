@@ -60,13 +60,12 @@ export class CartService {
   logCartData(totalQuantityValue: number, totalPriceValue: number) {
     console.log('1/ Contents of the cart');
     this.cartItems.forEach((cartItem) => {
-      console.log(`name : ${cartItem.name} :
-      - price : ${cartItem.unitPrice}, quantity : ${cartItem.quantity}
+      console.log(`     ${cartItem.quantity} ${cartItem.name} : unit price : ${cartItem.unitPrice}
       subtotal : ${cartItem.unitPrice * cartItem.quantity}
       --------------------------------`);
     });
 
-    console.log(`computeCartTotals :
+    console.log(`2/ computeCartTotals :
       - TotalQuantityValue : ${totalQuantityValue} ; 
       - TotalPriceValue : ${totalPriceValue.toFixed(2)} ;`);
   }
