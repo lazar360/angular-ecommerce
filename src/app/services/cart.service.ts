@@ -12,7 +12,6 @@ export class CartService {
   totalQuantity: Subject<number> = new Subject<number>();
 
   addToCart(theCartItem: CartItem) {
-    
     let existingCartItem: CartItem | undefined = undefined;
 
     if (this.cartItems.length > 0) {
@@ -21,7 +20,7 @@ export class CartService {
       );
     }
 
-    if (existingCartItem) existingCartItem.quantity++; 
+    if (existingCartItem) existingCartItem.quantity++;
     else this.cartItems.push(theCartItem);
 
     // compute cart total price and quantity
@@ -58,5 +57,22 @@ export class CartService {
     console.log(`2/ computeCartTotals :
       - TotalQuantityValue : ${totalQuantityValue} ; 
       - TotalPriceValue : ${totalPriceValue.toFixed(2)} ;`);
+  }
+
+  decrementQuantity(theCartItem: CartItem) {
+    theCartItem.quantity--;
+    if (theCartItem.quantity === 0) {
+      this.remove(theCartItem);
+    } else {
+      this.computeCartTotals();
+    }
+  }
+
+  remove(theCartItem: CartItem) {
+    const itemIndex = this.cartItems.findIndex(
+      (tempCartItem) => tempCartItem.id === theCartItem.id
+    );
+    if (itemIndex) this.cartItems.splice(itemIndex, 1);
+    this.computeCartTotals();
   }
 }

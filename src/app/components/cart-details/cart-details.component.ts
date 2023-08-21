@@ -31,4 +31,12 @@ export class CartDetailsComponent {
 
     this.cartService.computeCartTotals(); // le next permet de publier les variables (pas besoin de les créer)
   }
+
+  incrementQuantity(tempCartItem: CartItem) {
+    this.cartService.addToCart(tempCartItem);
+  }
+
+  decrementQuantity(theCartItem: CartItem) {
+    this.cartService.decrementQuantity(theCartItem);
+  }
 }
