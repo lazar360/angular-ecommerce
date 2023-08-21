@@ -72,7 +72,7 @@ export class CartService {
     const itemIndex = this.cartItems.findIndex(
       (tempCartItem) => tempCartItem.id === theCartItem.id
     );
-    if (itemIndex) this.cartItems.splice(itemIndex, 1);
+    if (itemIndex > -1) this.cartItems.splice(itemIndex, 1);
     this.computeCartTotals();
   }
 }
