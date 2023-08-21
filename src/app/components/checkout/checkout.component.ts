@@ -83,4 +83,19 @@ export class CheckoutComponent {
     console.log('Handling the form submission');
     console.log(this.checkoutFormGroup.get('customer')?.value);
   }
+
+  handleMonthsAndYears(){
+    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
+    const currentYear:number = new Date().getFullYear();
+    const selectedYear:number = Number(creditCardFormGroup?.value.expirationYear);
+
+    let startMonth:number = selectedYear === currentYear ? new Date().getMonth() + 1 : 1;
+
+    this.luv2ShopFormService.getCreditCardMonths(startMonth).subscribe(
+      data => {
+        console.log("Retrieved month data" + JSON.stringify(data));
+        this.creditCardMonths = data;
+      },
+    )
+  }
 }
