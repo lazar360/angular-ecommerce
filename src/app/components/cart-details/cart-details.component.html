@@ -10,10 +10,24 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Image</td>
-            <td>Mug</td>
-            <td>$15.00</td>
+          <tr *ngFor="let tempCartItem of cartItems">
+            <td>
+              <img
+                src="{{ tempCartItem.imageUrl }}"
+                alt="{{ tempCartItem.name }}"
+                class="img-responsive"
+                width="150px"
+              />
+            </td>
+            <td>
+              <p>{{ tempCartItem.name }}</p>
+              <p>{{ tempCartItem.unitPrice | currency:'USD'}}</p>
+            </td>
+            <td>
+                <div class="items">
+                    <label>Quantity :</label> {{ tempCartItem.quantity }}
+                </div>
+            </td>
           </tr>
         </tbody>
       </table>
