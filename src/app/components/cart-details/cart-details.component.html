@@ -21,12 +21,20 @@
             </td>
             <td>
               <p>{{ tempCartItem.name }}</p>
-              <p>{{ tempCartItem.unitPrice | currency:'USD'}}</p>
+              <p>{{ tempCartItem.unitPrice | currency : "USD" }}</p>
             </td>
             <td>
-                <div class="items">
-                    <label>Quantity :</label> {{ tempCartItem.quantity }}
-                </div>
+              <div class="items">
+                <label>Quantity :</label> {{ tempCartItem.quantity }}
+              </div>
+
+              <p class="mt-2">
+                Subtotal :
+                {{
+                  tempCartItem.quantity * tempCartItem.unitPrice
+                    | currency : "USD"
+                }}
+              </p>
             </td>
           </tr>
         </tbody>
