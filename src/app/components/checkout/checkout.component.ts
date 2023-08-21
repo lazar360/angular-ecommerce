@@ -21,5 +21,10 @@ export class CheckoutComponent {
     });
   }
 
+  onSubmit() {
+    console.log("Handling the form submission");
+    console.log(this.checkoutFormGroup.get('customer')?.value);
+  }
+
 
 }
