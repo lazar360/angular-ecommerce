@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, of } from 'rxjs';
 import { Country } from '../common/country';
-import { State } from '@popperjs/core';
+import { State } from '../common/state';
 
 @Injectable({
   providedIn: 'root',
