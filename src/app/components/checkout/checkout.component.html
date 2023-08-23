@@ -233,31 +233,31 @@
               </div>
 
               <div
-              *ngIf="
-               shippingAddressZipCode?.invalid &&
-                (shippingAddressZipCode?.dirty ||
-                shippingAddressZipCode?.touched)
-              "
-              class="alert alert-danger mt-1"
-            >
-              <div
                 *ngIf="
-                shippingAddressZipCode?.errors?.required ||
-                shippingAddressZipCode?.errors?.notOnlyWhitespace
+                  shippingAddressZipCode?.invalid &&
+                  (shippingAddressZipCode?.dirty ||
+                    shippingAddressZipCode?.touched)
                 "
+                class="alert alert-danger mt-1"
               >
-                Zip Code is required
-              </div>
+                <div
+                  *ngIf="
+                    shippingAddressZipCode?.errors?.required ||
+                    shippingAddressZipCode?.errors?.notOnlyWhitespace
+                  "
+                >
+                  Zip Code is required
+                </div>
 
-              <div
-                *ngIf="
-                shippingAddressZipCode?.errors?.minlength &&
-                  !shippingAddressZipCode?.errors?.notOnlyWhitespace
-                "
-              >
-                Zip Code must be at least 2 characters
+                <div
+                  *ngIf="
+                    shippingAddressZipCode?.errors?.minlength &&
+                    !shippingAddressZipCode?.errors?.notOnlyWhitespace
+                  "
+                >
+                  Zip Code must be at least 2 characters
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>
@@ -414,14 +414,14 @@
                 *ngIf="
                   billingAddressZipCode?.invalid &&
                   (billingAddressZipCode?.dirty ||
-                  billingAddressZipCode?.touched)
+                    billingAddressZipCode?.touched)
                 "
                 class="alert alert-danger mt-1"
               >
                 <div
                   *ngIf="
-                  billingAddressZipCode?.errors?.required ||
-                  billingAddressZipCode?.errors?.notOnlyWhitespace
+                    billingAddressZipCode?.errors?.required ||
+                    billingAddressZipCode?.errors?.notOnlyWhitespace
                   "
                 >
                   Zip Code is required
@@ -429,7 +429,7 @@
 
                 <div
                   *ngIf="
-                  billingAddressZipCode?.errors?.minlength &&
+                    billingAddressZipCode?.errors?.minlength &&
                     !billingAddressZipCode?.errors?.notOnlyWhitespace
                   "
                 >
@@ -451,6 +451,18 @@
                   <option>Visa</option>
                   <option>Mastercard</option>
                 </select>
+
+                <div
+                  *ngIf="
+                    creditCardType?.invalid &&
+                    (creditCardType?.dirty || creditCardType?.touched)
+                  "
+                  class="alert alert-danger mt-1"
+                >
+                  <div *ngIf="creditCardType?.errors?.required">
+                    Credit Card Type is required
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -461,6 +473,32 @@
               <div class="input-space">
                 <input formControlName="nameOnCard" type="text" />
               </div>
+
+              <div
+                *ngIf="
+                  creditCardNameOnCard?.invalid &&
+                  (creditCardNameOnCard?.dirty || creditCardNameOnCard?.touched)
+                "
+                class="alert alert-danger mt-1"
+              >
+                <div
+                  *ngIf="
+                    creditCardNameOnCard?.errors?.required ||
+                    creditCardNameOnCard?.errors?.notOnlyWhitespace
+                  "
+                >
+                  Name is required
+                </div>
+
+                <div
+                  *ngIf="
+                    creditCardNameOnCard?.errors?.minlength &&
+                    !creditCardNameOnCard?.errors?.notOnlyWhitespace
+                  "
+                >
+                  Name must be at least 2 characters long
+                </div>
+              </div>
             </div>
           </div>
 
@@ -470,6 +508,22 @@
               <div class="input-space">
                 <input formControlName="cardNumber" type="text" />
               </div>
+
+              <div
+                *ngIf="
+                  creditCardNumber?.invalid &&
+                  (creditCardNumber?.dirty || creditCardNumber?.touched)
+                "
+                class="alert alert-danger mt-1"
+              >
+                <div *ngIf="creditCardNumber?.errors?.required">
+                  Card Number is required
+                </div>
+
+                <div *ngIf="creditCardNumber?.errors?.pattern">
+                  Card Number must be 16 digits long
+                </div>
+              </div>
             </div>
           </div>
 
@@ -478,6 +532,22 @@
             <div class="col-md-9">
               <div class="input-space">
                 <input formControlName="securityCode" type="text" />
+              </div>
+
+              <div
+                *ngIf="
+                  creditCardSecurityCode?.invalid &&
+                  (creditCardSecurityCode?.dirty || creditCardSecurityCode?.touched)
+                "
+                class="alert alert-danger mt-1"
+              >
+                <div *ngIf="creditCardSecurityCode?.errors?.required">
+                  Security Code is required
+                </div>
+
+                <div *ngIf="creditCardSecurityCode?.errors?.pattern">
+                  Card Number must be 3 digits long
+                </div>
               </div>
             </div>
           </div>
