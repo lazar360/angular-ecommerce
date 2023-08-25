@@ -14,6 +14,8 @@ import { CartStatusComponent } from './components/cart-status/cart-status.compon
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthModule } from '@auth0/auth0-angular';
+import { AuthButtonComponent } from './components/auth-button/auth-button.component';
 
 const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
@@ -37,8 +39,22 @@ const routes: Routes = [
     CartStatusComponent,
     CartDetailsComponent,
     CheckoutComponent,
+    AuthButtonComponent,
   ],
-  imports: [RouterModule.forRoot(routes), BrowserModule, HttpClientModule, NgbModule, ReactiveFormsModule],
+  imports: [
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    HttpClientModule,
+    NgbModule,
+    ReactiveFormsModule,
+    AuthModule.forRoot({
+      domain: 'dev-trgl7vjn6kgqp34p.us.auth0.com',
+      clientId: 'iQQXiJPDyfTSP1PNoWBzTkzOqStNddyR',
+      authorizationParams: {
+        redirect_uri: window.location.origin,
+      },
+    }),
+  ],
   providers: [ProductService],
   bootstrap: [AppComponent],
 })
