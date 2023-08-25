@@ -7,10 +7,18 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class CartService {
   cartItems: CartItem[] = [];
-
   totalPrice: Subject<number> = new BehaviorSubject<number>(0);
   totalQuantity: Subject<number> = new BehaviorSubject<number>(0);
+  storage: Storage = sessionStorage;
 
+  constructor() {
+    // read data from storage
+    let data = JSON.parse(this.storage.getItem('cartItems')!);
+    if (data != null) {
+      this.cartItems = data;
+      // compute totals based on the data that is read from storage
+    }
+  }
   addToCart(theCartItem: CartItem) {
     let existingCartItem: CartItem | undefined = undefined;
 
@@ -42,6 +50,13 @@ export class CartService {
 
     // log cart data for debugging purposes
     this.logCartData(totalQuantityValue, totalPriceValue);
+
+    // persist cart data
+    this.persistCartItems();
+  }
+
+  persistCartItems() {
+    this.storage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
 
   logCartData(totalQuantityValue: number, totalPriceValue: number) {
