@@ -16,6 +16,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthButtonComponent } from './components/auth-button/auth-button.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
@@ -40,6 +41,7 @@ const routes: Routes = [
     CartDetailsComponent,
     CheckoutComponent,
     AuthButtonComponent,
+    UserProfileComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
