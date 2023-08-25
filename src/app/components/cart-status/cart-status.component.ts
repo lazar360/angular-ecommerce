@@ -18,6 +18,7 @@ export class CartStatusComponent {
   ) {}
 
   ngOnInit() {
+    this.cartService.computeCartTotals();
     this.updateCartStatus();
   }
 
