@@ -1,10 +1,15 @@
 <div class="cart-area d-n">
-  <ng-container *ngIf="isAuthenticated$ | async">
-    <a routerLink="/cart-details">
-      <div class="total">
-        {{ totalPrice | currency : "USD" }} <span> {{ totalQuantity }}</span>
-      </div>
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-    </a>
+  <ng-container>
+    <div *ngIf="isAuthenticated$ | async; else messageUserMustLoggin">
+      <a routerLink="/cart-details">
+        <div class="total">
+          {{ totalPrice | currency : "USD" }} <span> {{ totalQuantity }}</span>
+        </div>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      </a>
+    </div>  
+    <ng-template #messageUserMustLoggin>
+      <div class="total" style="padding-right: 10px;">no user logged in</div> 
+    </ng-template>
   </ng-container>
 </div>
