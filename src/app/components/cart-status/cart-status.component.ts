@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-cart-status',
@@ -9,8 +10,12 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartStatusComponent {
   totalPrice: number = 0.0;
   totalQuantity: number = 0;
+  isAuthenticated$ = this.authService.isAuthenticated$;
 
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.updateCartStatus();
