@@ -17,8 +17,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthButtonComponent } from './components/auth-button/auth-button.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 const routes: Routes = [
+  { path: 'order-history', component: OrderHistoryComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'cart-details', component: CartDetailsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
@@ -42,6 +44,7 @@ const routes: Routes = [
     CheckoutComponent,
     AuthButtonComponent,
     UserProfileComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
