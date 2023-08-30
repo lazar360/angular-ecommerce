@@ -8,8 +8,9 @@ import { OrderHistoryService } from 'src/app/services/order-history.service';
   styleUrls: ['./order-history.component.css'],
 })
 export class OrderHistoryComponent implements OnInit {
-  orderHistoryList: OrderHistory[] = [];
   storage: Storage = sessionStorage;
+  orderHistoryList: OrderHistory[] = [];
+  orderHistoryListBuffer: OrderHistory[] = [];
 
   constructor(private orderHistoryService: OrderHistoryService) {}
 
@@ -27,6 +28,7 @@ export class OrderHistoryComponent implements OnInit {
   }
 
   copyOrderHistoryList(orderHistoryList: any){
-    console.log("orderHistoryList" + JSON.stringify(orderHistoryList));
+    this.orderHistoryListBuffer = JSON.parse(JSON.stringify(orderHistoryList));
+    console.log("orderHistoryListBuffer" + JSON.stringify(this.orderHistoryListBuffer.find(i => i.totalQuantity ===1)));
   }
 }
