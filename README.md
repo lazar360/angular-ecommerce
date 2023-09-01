@@ -1,27 +1,34 @@
-# AngularEcommerce
+<h1>Employee Manager</h1>
+    <h2>Table of contents</h2>
+    <ul>
+        <li>Introduction</li>
+        <li>Demo</li>
+        <li>Features</li>
+        <li>Technology</li>
+    </ul>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
+<h2>Introduction</h2>
 
-## Development server
+A website using <a href="https://github.com/lazar360/employeemanager">Java Spring Boot for Back-End</a> and Angular for Front-End.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<h2>Demo</h2>
 
-## Code scaffolding
+![employeemanager](https://user-images.githubusercontent.com/91179295/165254731-d9a41003-a018-4efb-b9ba-5ab12563b211.gif)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h2>Features</h2>
+This one single page website displays an employee manager.
+Users can do the following :
+<ul>
+    <li>Filter employee</li>
+    <li>Create employee</li>
+    <li>Update employee</li>
+    <li>Delete employee</li>
+</ul>
+<h2>Technology</h2>
+<ul>
+    <li>Java 11</li>
+    <li>MySql 5.1.1</li>
+    <li>Bootsrap 5.1.3</li>
+    <li>FontAwesome</li>
+    <li>Angular</li>
+</ul>
