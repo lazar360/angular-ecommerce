@@ -19,16 +19,17 @@ A website using <a href="https://github.com/lazar360/spring-boot-ecommerce">Java
 This one single page website displays an employee manager.
 Users can do the following :
 <ul>
-    <li>Filter employee</li>
-    <li>Create employee</li>
-    <li>Update employee</li>
-    <li>Delete employee</li>
+    <li>Filter product</li>
+    <li>Login with mail or google</li>
+    <li>Purchase a product</li>
+    <li>Pay with credit card</li>
+    <li>See your order history</li>
 </ul>
 <h2>Technology</h2>
 <ul>
-    <li>Java 11</li>
-    <li>MySql 5.1.1</li>
-    <li>Bootsrap 5.1.3</li>
-    <li>FontAwesome</li>
-    <li>Angular</li>
+    <li>Angular 16</li>
+    <li>MySql 5</li>
+    <li>Okta</li>
+    <li>Spring Boot 3</li>
+    <li>Stripe</li>
 </ul>
