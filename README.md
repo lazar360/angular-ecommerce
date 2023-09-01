@@ -1,4 +1,4 @@
-<h1>Employee Manager</h1>
+<h1>Angular Ecommerce</h1>
     <h2>Table of contents</h2>
     <ul>
         <li>Introduction</li>
@@ -9,7 +9,7 @@
 
 <h2>Introduction</h2>
 
-A website using <a href="https://github.com/lazar360/employeemanager">Java Spring Boot for Back-End</a> and Angular for Front-End.
+A website using <a href="https://github.com/lazar360/spring-boot-ecommerce">Java Spring Boot for Back-End</a> and Angular for Front-End.
 
 <h2>Demo</h2>
 
