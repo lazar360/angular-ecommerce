@@ -13,7 +13,7 @@ A website using <a href="https://github.com/lazar360/spring-boot-ecommerce">Java
 
 <h2>Demo</h2>
 
-![employeemanager](https://user-images.githubusercontent.com/91179295/165254731-d9a41003-a018-4efb-b9ba-5ab12563b211.gif)
+![angular-ecomerce](https://github.com/lazar360/angular-ecommerce/assets/91179295/2f21fb0f-6f62-4a6f-83b5-eba8a2d013c5)
 
 <h2>Features</h2>
 This one single page website displays an employee manager.
