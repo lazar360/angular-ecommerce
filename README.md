@@ -16,7 +16,7 @@ A website using <a href="https://github.com/lazar360/spring-boot-ecommerce">Java
 ![angular-ecomerce](https://github.com/lazar360/angular-ecommerce/assets/91179295/2f21fb0f-6f62-4a6f-83b5-eba8a2d013c5)
 
 <h2>Features</h2>
-This one single page website displays an employee manager.
+This one single page website displays a store.
 Users can do the following :
 <ul>
     <li>Filter product</li>
